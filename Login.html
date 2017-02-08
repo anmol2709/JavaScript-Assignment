@@ -1,0 +1,166 @@
+<html>
+<head>
+    <script>
+//Using Timers
+function currentTime(){
+var date=new Date();
+var time=date.toLocaleTimeString();
+document.getElementById("timer").innerHTML="Current Time : "+time; //DOM manipulation
+};
+
+window.onload=function(){currentTime()};
+//Using Variables
+var UserObj= new Object();
+var PasswordObj= new Object();
+var arrayOfUsers=new Array();
+arrayOfUsers.push("anmol@knoldus.in"); //Pushing Values Into Array
+arrayOfUsers.push("pankhurie@knoldus.in");
+arrayOfUsers.push("anmol.sarna@knoldus.in");
+
+var arrayOfPasswords=new Array();
+arrayOfPasswords.push("anmol");    //Pushing Values Into Array
+arrayOfPasswords.push("pankhurie");
+arrayOfPasswords.push("anmol");
+
+UserObj.info=arrayOfUsers;  // Use Of JavaScript Objects
+PasswordObj.info=arrayOfPasswords;
+ var x=setInterval(function(){currentTime()},1000);
+//Using Functions And Validations
+function checkDetails(){
+
+var uname=document.getElementById("name").value;
+var pswd=document.getElementById("psw").value;
+
+var indexarray=UserObj.info.indexOf(uname);  //Using ArrayFunction indexOf
+
+  if(indexarray==-1)
+  {
+    alert("Username invalid");
+  }
+else {
+
+if(pswd==PasswordObj.info[indexarray])
+{
+alert ("Login successfully");
+window.location = "Design-Page.html";
+return true;
+}
+
+else
+{
+  alert(" Password not Valid");
+  window.location = "Login.html";
+return false;
+}
+}
+  };
+
+
+    </script>
+
+    <style>
+form {
+    border: 3px solid #f1f1f1;
+}
+
+
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+button:hover{
+background-color: red
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.para{
+float:right;margin-right:1%;color:red
+}
+
+.imgcnt {
+    text-align: center;
+    margin: 24px 0 12px 24px;
+}
+
+/* image */
+.imging {
+    width: 30%;
+    border-radius: 20%;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+}
+
+
+span.psw {
+    float: right;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+
+.cancelbtn {
+ width: 100%;
+}
+
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>To View My Page Please Login</h1>
+</header>
+<form action="action_page.php">
+
+    <strong><p id="timer" class="para"></p></strong>
+    <div class="imgcnt">
+        <img src="123.jpg" alt="Website Image" class="imging">
+    </div>
+
+    <div class="container">
+        <label><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" onfocus="this.placeholder=' '"
+               onblur="this.placeholder = 'Enter Email' " id="name" reqired>
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" onfocus=" this.placeholder=' '"
+               onblur="this.placeholder = 'Enter Password'" id="psw" required>
+
+        <button type="button" onclick="checkDetails()">Login</button>
+        <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+</form>
+</body>
+</html>
