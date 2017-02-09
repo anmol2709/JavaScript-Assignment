@@ -10,9 +10,30 @@ document.getElementById("timer").innerHTML="Current Time : "+time;
 },1000);
 window.onload=function(){currentTime()};
 
+function displayPic1(){
+  document.getElementById("img1").setAttribute("src","Html.jpg");
+};
+function displayPic2(){
+  document.getElementById("img1").setAttribute("src","css.png");
+};
+function displayPic3(){
+  document.getElementById("img1").setAttribute("src","js.jpg");
+};
+
+function displayPic4(){
+  document.getElementById("img1").setAttribute("src","Jquery.png");
+};
 </script>
+
     <meta charset="UTF-8">
     <title>Dally Design</title>
+<style>
+.col{
+  color:green;
+  margin:10,10,10,10;
+}
+
+</style>
 </head>
 <body>
 <div style="background-image: url(Trial.jpg); width:100%; height:100px ">
@@ -74,7 +95,7 @@ margin-top: 12px;
             <h3>Lorem ipsum dolor sit amet</h3>
             <p style="color:black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua.</p>
-            <ul style="color:#0000A0">
+            <ul style="color:#0000A">
                 <li>Excepteur sint occaecat cupidatat non proident.Excepteur sint occaecat cupidatat</li>
                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
                 <li>sunt in culpa qui officia deserunt mollit anim id est laborum</li>
@@ -85,18 +106,15 @@ margin-top: 12px;
     margin-right: 3px;
     margin-left: 30px;float:left ;width:28%">
             <h2 style="color:green ">
-                Testimonials
+            <strong>   CLICK These Options to view Pictures</strong>
             </h2>
-            <h3 class="bluecolor">
-                sed ut perspiciates
-            </h3>
-            <p>
-                Excepteur sint occaecat cupidatat non proident.Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officsint occaecat cupidatat non proident.Excepteur sint occaecat cupidatat non
-                proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum
-            </p>
-        </td>
+          <strong>  <ul class="col">
+          <li onclick="displayPic1()" >Html</li>
+            <li onclick="displayPic2()">Css </li>
+            <li onclick="displayPic3()">JavaScript</li>
+            <li onclick="displayPic4()">JQuery</li>
+</ul></strong>
+          </td>
     </tr>
     <tr>
         <td style="margin-top: 12px;
@@ -111,9 +129,11 @@ margin-top: 12px;
                 proident,
                 sunt in</p>
         </td>
-        <td style="margin-top:5%;
-        margin-left: 20% ;float:left">
-                    <img src="123.jpg" width="50%">
+        <td style="margin-top: 12px;
+    margin-bottom: 2px;
+    margin-right: 3px;
+    margin-left: 30px;float:left ;width:28%">
+<img style="margin-left:"10%;width:60%" src=" " id="img1">
 </td>
     </tr>
 
